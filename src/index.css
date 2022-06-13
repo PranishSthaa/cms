@@ -1,23 +1,4 @@
-body {
-  background-color: #f4f6f9;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.divider {
-  height: 3rem;
-  background-color: #f4f6f9;
-}
-
-.footer {
-  display: block;
-}
-
-.glass-effect {
-  background-color: #ffffff10;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+* {
+  margin: 0;
+  padding: 0;
 }

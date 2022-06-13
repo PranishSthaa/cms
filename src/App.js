@@ -1,18 +1,16 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import { ThemeProvider } from "@mui/material";
+import { CssBaseline } from '@mui/material';
+import AppRoute from "./AppRoute";
+import { theme } from "./utils/theme";
 
 function App() {
+
+
   return <>
-    <div className="overflow-hidden position-relative">
-      <Navbar />
-      <Signup />
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppRoute />
+    </ThemeProvider>
   </>;
 }
 
