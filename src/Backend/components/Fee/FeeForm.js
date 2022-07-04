@@ -59,11 +59,6 @@ const FeeForm = () => {
 
     const onError = (errors, e) => console.log(errors, e);
     const onSubmit = (data) => {
-        // console.log(data);
-        const sendData = {
-            ...data,
-            status: true,
-        }
         setMessage("");
         setLoading(true);
         if (editMode) {
@@ -214,6 +209,35 @@ const FeeForm = () => {
                                 />
                                 <Typography variant="body2" color="error">
                                     {errors.student?.message}
+                                </Typography>
+                            </Grid>
+                            <Grid item md={4} xs={6}>
+                                <Controller
+                                    control={control}
+                                    name='status'
+                                    defaultValue={""}
+                                    render={({ field }) => (
+                                        <>
+                                            <TextField
+                                                {...field}
+                                                select
+                                                fullWidth
+                                                required
+                                                label='status'
+                                                variant='outlined'
+                                                margin='dense'
+                                                color='dark'
+                                                size='small'
+                                                error={errors.status ? true : false}
+                                            >
+                                                <MenuItem value={0}>Pending</MenuItem>
+                                                <MenuItem value={1}>Paid</MenuItem>
+                                            </TextField>
+                                        </>
+                                    )}
+                                />
+                                <Typography variant="body2" color="error">
+                                    {errors.status?.message}
                                 </Typography>
                             </Grid>
                         </Grid>

@@ -69,7 +69,7 @@ const FeeTable = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {fees.map((fee, index) => {
+                            {fees.map((fee) => {
                                 return <TableRow
                                     hover
                                     key={fee.id}
@@ -84,13 +84,13 @@ const FeeTable = () => {
                                         {fee.amount}
                                     </TableCell>
                                     <TableCell>
-                                        {fee.date}
+                                        {fee.date.split('T')[0]}
                                     </TableCell>
                                     <TableCell>
                                         {fee.Student.name}
                                     </TableCell>
                                     <TableCell>
-                                        {fee.status}
+                                        {(fee.status) ? "PAID" : "PENDING"}
                                     </TableCell>
                                     <TableCell>
                                         {currentUser.role.includes('ROLE_ACCOUNTANT') && <Box>
